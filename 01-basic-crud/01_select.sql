@@ -42,3 +42,13 @@ WHERE email LIKE '%company.com';
 4-2. 이름에 '앱'이 포함된 프로젝트 조회
 SELECT * FROM projects 
 WHERE name LIKE '%앱%';
+
+5-1. 급여 높은 순 정렬 (내림차순)
+SELECT name, salary 
+FROM employees 
+ORDER BY salary DESC;
+
+5-2. 진행도 낮은 순(오름차순), 진행도 같으면 마감일 최신순(내림차순) 정렬
+SELECT name, progress, due_date 
+FROM projects 
+ORDER BY progress ASC, due_date DESC;
