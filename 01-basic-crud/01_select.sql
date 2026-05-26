@@ -18,3 +18,27 @@ WHERE status = '진행중';
 SELECT name, email 
 FROM employees 
 WHERE department_id IS NULL
+
+3-1. 개발팀(2)이면서 급여가 5000 이상인 직원 (AND)
+SELECT name, salary 
+FROM employees 
+WHERE department_id = 2 AND salary >= 5000;
+
+3-2. 급여가 4000 이상 6000 이하인 직원 (BETWEEN)
+SELECT name, salary 
+FROM employees 
+WHERE salary BETWEEN 4000 AND 6000;
+
+3-3. 직급이 '팀장'이거나 '수석 개발자'인 직원 (OR)
+SELECT name, position 
+FROM employees 
+WHERE position = '팀장' OR position = '수석 개발자';
+
+4-1. company.com 이메일을 사용하는 직원 조회
+SELECT name, email 
+FROM employees 
+WHERE email LIKE '%company.com';
+
+4-2. 이름에 '앱'이 포함된 프로젝트 조회
+SELECT * FROM projects 
+WHERE name LIKE '%앱%';
